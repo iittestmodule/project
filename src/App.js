@@ -5,9 +5,8 @@ import TestOptions from './components/TestOptions';
 import JEEMain from './components/test/JEEMain';
 import JEEAdvanced from './components/test/JEEAdvanced';
 import NEET from './components/test/NEET';
-import BITSAT from './components/test/BITSAT';
-import VITEEE from './components/test/VITEEE';
-import KVPY from './components/test/KVPY';
+import Class from './components/Class';
+import TestStart from './components/TestStart';
 
 const App = (props) => {
   return (
@@ -18,9 +17,12 @@ const App = (props) => {
       <Route exact path="/test/jee-main" component={ JEEMain } { ...props }/>
       <Route exact path="/test/jee-advanced" component={ JEEAdvanced } { ...props }/>
       <Route exact path="/test/neet" component={ NEET } { ...props }/>
-      <Route exact path="/test/bitsat" component={ BITSAT } { ...props }/>
-      <Route exact path="/test/viteee" component={ VITEEE } { ...props }/>
-      <Route exact path="/test/kvpy" component={ KVPY } { ...props }/>
+      <Route exact path="/test/jee-main/class" component={ Class } { ...props } examType='jee-main'/>
+      <Route exact path="/test/jee-main/class/:standard" component={ TestStart } { ...props } />
+      <Route exact path="/test/jee-advanced/class" component={ Class } { ...props } examType='jee-advanced' />
+      <Route exact path="/test/jee-advanced/class/:standard" component={ TestStart } { ...props }/>
+      <Route exact path="/test/neet/class" component={ Class } { ...props } examType='neet' />
+      <Route exact path="/test/neet/class/:standard" component={ TestStart } { ...props }/>
     </Switch>
   )
 }
