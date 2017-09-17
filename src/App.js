@@ -7,12 +7,19 @@ import JEEAdvanced from './components/test/JEEAdvanced';
 import NEET from './components/test/NEET';
 import Class from './components/Class';
 import TestStart from './components/TestStart';
+import LoginPage from './components/pages/login';
+import RegistrationPage from './components/pages/registration';
+import ForgotPasswordPage from './components/pages/forgot';
+
 
 const App = (props) => {
   return (
     <Switch>
       <Route exact path="/" component={ HomePage } { ...props }/>
       <Route exact path="/home" component={ HomePage } { ...props }/>
+      <Route exact path="/login" component={ LoginPage } { ...props }/>
+      <Route exact path="/registration" component={ RegistrationPage } { ...props }/>
+      <Route exact path="/forgot" component={ ForgotPasswordPage } { ...props }/>
       <Route exact path="/test" component={ TestOptions } { ...props }/>
       <Route exact path="/test/jee-main" component={ JEEMain } { ...props }/>
       <Route exact path="/test/jee-advanced" component={ JEEAdvanced } { ...props }/>
